@@ -1,27 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className='btn btn-danger'>Sports</button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import firebase
+import firebase from 'firebase/app';
+import firebaseConnection from '../helpers/data/connections';
+
+// call connection before 
+firebaseConnection();
+
+class App extends React.Component {
+  state = {
+    authed: false,
+  }
+
+  componentDidMount() {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ authed: true });
+      } else {
+        this.setState({ authed: false });
+      }
+    });
+  }
+
+  // we won't use this method very often 
+  componentWillUnmount() {
+    this.removeListener();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Game Time</h1>
+      </div>
+    );
+  }
 }
 
 export default App;
