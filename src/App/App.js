@@ -5,6 +5,8 @@ import './App.scss';
 import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connections';
 import Auth from '../components/Auth/Auth';
+import NavBar from '../components/NavBar/NavBar';
+
 
 // call connection before
 firebaseConnection();
@@ -34,11 +36,11 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>QB₁</h1>
+        <NavBar authed={authed}/>
         {/* if they are logged in show team */}
         {/* if not show log-in btn */}
         {
-        (authed) ? (<div>You logged in</div>) : (<Auth/>)
+        (authed) ? (<div></div>) : (<Auth/>)
         }
       </div>
     );
