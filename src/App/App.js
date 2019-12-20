@@ -4,8 +4,9 @@ import './App.scss';
 // import firebase
 import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connections';
+import Auth from '../components/Auth/Auth';
 
-// call connection before 
+// call connection before
 firebaseConnection();
 
 class App extends React.Component {
@@ -23,15 +24,22 @@ class App extends React.Component {
     });
   }
 
-  // we won't use this method very often 
+  // we won't use this method very often
   componentWillUnmount() {
     this.removeListener();
   }
 
   render() {
+    const { authed } = this.state;
+
     return (
       <div className="App">
-        <h1>Game Time</h1>
+        <h1>QB₁</h1>
+        {/* if they are logged in show team */}
+        {/* if not show log-in btn */}
+        {
+        (authed) ? (<div>You logged in</div>) : (<Auth/>)
+        }
       </div>
     );
   }
