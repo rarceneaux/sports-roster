@@ -41,9 +41,9 @@ class App extends React.Component {
         {/* if they are logged in show team */}
         {/* if not show log-in btn */}
         {
-        (authed) ? (<div></div>) : (<Auth/>)
+          // Team Container below
+        (authed) ? (<Team/>) : (<Auth/>)
         }
-        <Team />
       </div>
     );
   }
