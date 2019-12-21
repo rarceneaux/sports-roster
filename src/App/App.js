@@ -6,6 +6,7 @@ import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connections';
 import Auth from '../components/Auth/Auth';
 import NavBar from '../components/NavBar/NavBar';
+import Team from '../components/Team/Team';
 
 
 // call connection before
@@ -40,7 +41,8 @@ class App extends React.Component {
         {/* if they are logged in show team */}
         {/* if not show log-in btn */}
         {
-        (authed) ? (<div></div>) : (<Auth/>)
+          // Team Container below
+        (authed) ? (<Team/>) : (<Auth/>)
         }
       </div>
     );
