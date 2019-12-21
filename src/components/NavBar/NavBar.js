@@ -27,7 +27,7 @@ render() {
           </ul>
           <div className="form-inline my-2 my-lg-0">
             {/* if auth is true show btn to log out if not true show nothing */}
-            { authed ? (<button className="btn btn-secondary" onClick={this.logMeOut}>GAME<span role="img" aria-label="football"> 🏈</span>OVER</button>)
+            { authed ? (<button className="btn btn-secondary" onClick={this.logMeOut}>LOG-OUT<span role="img" aria-label="football"> 🏈</span></button>)
               : ('')
             }
             </div>

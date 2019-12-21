@@ -6,6 +6,7 @@ import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connections';
 import Auth from '../components/Auth/Auth';
 import NavBar from '../components/NavBar/NavBar';
+import Team from '../components/Team/Team';
 
 
 // call connection before
@@ -42,6 +43,7 @@ class App extends React.Component {
         {
         (authed) ? (<div></div>) : (<Auth/>)
         }
+        <Team />
       </div>
     );
   }
