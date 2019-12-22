@@ -23,7 +23,7 @@ class Team extends React.Component {
   render() {
     return (
       <div className="myCards">
-    <div>{this.state.players.map((player) => (<PlayerCard player={player}/>))}
+    <div className="col-3">{this.state.players.map((player) => (<PlayerCard player={player}/>))}
     </div>
     </div>);
   }
