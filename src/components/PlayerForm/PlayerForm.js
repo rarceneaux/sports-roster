@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import authData from '../../helpers/data/authData';
+import playerShape from '../../helpers/propz/playerShape';
+
 import './PlayerForm.scss';
 
 class AddPlayerForm extends React.Component {
   static propTypes = {
     addPlayer: PropTypes.func,
+    playerToEdit: playerShape.playerShape,
+    editMode: PropTypes.bool,
+    updatePlayer: PropTypes.func,
   }
 
 state = {
@@ -15,6 +19,12 @@ state = {
   position: '',
 }
 
+componentDidMount() {
+  const { playerToEdit, editMode } = this.props;
+  if (editMode) {
+    this.setState({ imageUrl: playerToEdit.imageUrl, name: playerToEdit.name, position: playerToEdit.position });
+  }
+}
 
 savePlayerEvent = (e) => {
   const { addPlayer } = this.props;
@@ -28,6 +38,18 @@ savePlayerEvent = (e) => {
   };
   addPlayer(newPlayer);
   this.setState({ imageUrl: '', name: '', position: '' });
+}
+
+updatePlayerEvent = (e) => {
+  e.preventDefault();
+  const { updatePlayer, playerToEdit } = this.props;
+  const updatedPlayer = {
+    imageUrl: this.state.imageUrl,
+    name: this.state.name,
+    position: this.state.position,
+    uid: playerToEdit.uid,
+  };
+  updatePlayer(playerToEdit.id, updatedPlayer);
 }
 
 nameChange = (e) => {
@@ -46,7 +68,8 @@ imgChange = (e) => {
 }
 
 render() {
-  // const { player } = this.props;
+  const { editMode } = this.props;
+
   return (
       <form className='col-6 offset-3 PlayerForm'>
       <div className="form-group">
@@ -84,8 +107,8 @@ render() {
       </div>
       {
         // addupdateBoardEvent here
-        // (editMode) ? (<button className="btn btn-warning" onClick={this.updatePlayerEvent}>Update Player</button>)
-           <button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>
+        (editMode) ? (<button className="btn btn-warning" onClick={this.updatePlayerEvent}>Update Player</button>)
+          : (<button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>)
       }
     </form>
   );
