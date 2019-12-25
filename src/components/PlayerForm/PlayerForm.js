@@ -108,7 +108,8 @@ render() {
       {
         // addupdateBoardEvent here
         (editMode) ? (<button className="btn btn-warning" onClick={this.updatePlayerEvent}>Update Player</button>)
-          : (<button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>)
+          : (<button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>
+          )
       }
     </form>
   );
