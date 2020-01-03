@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.scss';
 
-// import firebase
 import firebase from 'firebase/app';
 import firebaseConnection from '../helpers/data/connections';
 import Auth from '../components/Auth/Auth';

@@ -1,5 +1,18 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Title: QB₁
+
+## This app is an online football team roster
+
+## Screenshots
+
+![](src/assets/Login.png)
+![](src/assets/Read.png)
+![](src/assets/Add.png)
+![](src/assets/Update.png)
+![](src/assets/Delete.png)
+
+
 ## Available Scripts
 
 In the project directory, you can run:

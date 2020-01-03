@@ -5,7 +5,7 @@ import playerShape from '../../helpers/propz/playerShape';
 
 import './PlayerForm.scss';
 
-class AddPlayerForm extends React.Component {
+class PlayerForm extends React.Component {
   static propTypes = {
     addPlayer: PropTypes.func,
     playerToEdit: playerShape.playerShape,
@@ -106,7 +106,6 @@ render() {
         />
       </div>
       {
-        // addupdateBoardEvent here
         (editMode) ? (<button className="btn btn-warning" onClick={this.updatePlayerEvent}>Update Player</button>)
           : (<button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>
           )
@@ -116,4 +115,4 @@ render() {
 }
 }
 
-export default AddPlayerForm;
+export default PlayerForm;
