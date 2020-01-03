@@ -2,15 +2,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Title: QB₁
 
-## This app is an online football team roster
+## This app is an online football team roster where the user can Create, Read, Update , and Delete a player from the roster.
 
 ## Screenshots
 
-![](src/assets/Login.png)
-![](src/assets/Read.png)
-![](src/assets/Add.png)
-![](src/assets/Update.png)
-![](src/assets/Delete.png)
+## Log In View
+![](https://raw.githubusercontent.com/rarceneaux/sports-roster/master/src/assets/Login.png)
+## READ 
+![](https://raw.githubusercontent.com/rarceneaux/sports-roster/master/src/assets/Read.png)
+## ADD
+![](https://raw.githubusercontent.com/rarceneaux/sports-roster/master/src/assets/Add.png)
+## UPDATE
+![](https://raw.githubusercontent.com/rarceneaux/sports-roster/master/src/assets/Update.png)
+## DELETE
+![](https://raw.githubusercontent.com/rarceneaux/sports-roster/master/src/assets/Delete.png)
 
 
 ## Available Scripts
